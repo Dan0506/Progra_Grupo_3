@@ -8,7 +8,6 @@ asientostc=[["1","2"],["3","4"],["5","6"],["7","8"],["9","10"]]
 asientossa=[["1","2"],["3","4"],["5","6"],["7","8"],["9","10"]]
 tiquetes=["Sencillo", "Diario", "Semanal"]
 sel=""
-ver=False
 id=0
 total = open("total.txt", "w")
 total.close()
@@ -40,7 +39,7 @@ def adquirirAsientos (ruta):
     factura = open(f"factura{id}.txt", "a")
     factura.write(f"Ruta: {rutas[int(rutas1)-1]}\n")
     tomado=True
-    global ver
+    ver=False
     ver1=False
     print("Estos son los asientos disponibles")
     printAsientos(ruta)
