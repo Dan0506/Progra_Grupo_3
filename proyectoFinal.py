@@ -1,3 +1,4 @@
+#Variables globales
 rutas=["Turrialba-San José", "Jaco por pista", "Concepción Abajo", "Turrialba Colectivo", "San José-Alajuela"]
 precios=[500, 1000, 3000]
 asientosts=[["1","2"],["3","4"],["5","6"],["7","8"],["9","10"]]
@@ -11,6 +12,8 @@ ver=False
 id=0
 total = open("total.txt", "w")
 total.close()
+
+#Calcula cuantos asientos están disponibles
 def contarAsientos(ruta):
     dis=0
     for i in range(0,len(ruta),1):
@@ -19,12 +22,14 @@ def contarAsientos(ruta):
                     dis+=1
     return dis
 
+#Imprime los asientos de una ruta dada
 def printAsientos(ruta):
     print("------------------------------------")    
     for i in range(0,len(ruta),1):
         print(ruta[i][0],ruta[i][1])
     print("------------------------------------")
-    
+
+#Adquiere una cantidad de asientos dada, de una ruta dada, los actualiza a no disponible y los guarda en una factura 
 def adquirirAsientos (ruta):
     global id
     sub=0
@@ -103,6 +108,7 @@ def adquirirAsientos (ruta):
     total.write(str(tot)+"\n")
     total.close()
 
+#Suma las ventas guardadas en un archivo de texto
 def sumVentas():
     tv=0
     total = open("total.txt", "r")
@@ -111,6 +117,7 @@ def sumVentas():
         tv+=float(i)
     print(tv)
 
+#Menú principal
 while sel!="5":
     sel=input("1. Ver Rutas\n2. Ver precios\n3. Adquirir tiquete(s)\n4. Consultar cantidad de espacios disponibles\n5. Salir\n\n")
     print("")
