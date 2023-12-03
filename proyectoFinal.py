@@ -28,6 +28,15 @@ def printAsientos(ruta):
         print(ruta[i][0],ruta[i][1])
     print("------------------------------------")
 
+#Suma las ventas guardadas en un archivo de texto
+def sumVentas():
+    tv=0
+    total = open("total.txt", "r")
+    ventas=total.readlines()
+    for i in ventas:
+        tv+=float(i)
+    print(tv)
+
 #Adquiere una cantidad de asientos dada, de una ruta dada, los actualiza a no disponible y los guarda en una factura 
 def adquirirAsientos (ruta):
     global id
@@ -106,15 +115,6 @@ def adquirirAsientos (ruta):
     total = open("total.txt", "a")
     total.write(str(tot)+"\n")
     total.close()
-
-#Suma las ventas guardadas en un archivo de texto
-def sumVentas():
-    tv=0
-    total = open("total.txt", "r")
-    ventas=total.readlines()
-    for i in ventas:
-        tv+=float(i)
-    print(tv)
 
 #Menú principal
 while sel!="5":
