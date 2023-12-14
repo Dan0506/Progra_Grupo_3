@@ -158,13 +158,13 @@ while sel!="5":
             print("Quedan" ,contarAsientos(asientosj), "asientos disponibles")
         elif ruta == "3":
             printAsientos(asientosc)
-            print("Quedan" ,contarAsientos(asientosj), "asientos disponibles")
+            print("Quedan" ,contarAsientos(asientosc), "asientos disponibles")
         elif ruta == "4":
             printAsientos(asientostc)
-            print("Quedan" ,contarAsientos(asientosj), "asientos disponibles")
+            print("Quedan" ,contarAsientos(asientostc), "asientos disponibles")
         elif ruta == "5":
             printAsientos(asientossa)
-            print("Quedan" ,contarAsientos(asientosj), "asientos disponibles")
+            print("Quedan" ,contarAsientos(asientossa), "asientos disponibles")
         else:
             print("\nPor favor seleccione una opción válida")
             
